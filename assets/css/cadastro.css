@@ -36,9 +36,9 @@ input{
     transform: translate(-50%, -50%);
 }
 
-@media (max-width:380px){
+@media (max-width:400px){
     h6{
-        
+
         margin-left: 50px;
     }
 }
