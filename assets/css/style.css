@@ -58,16 +58,28 @@ nav a:hover {
     background-color: #110D28;
     color: rgb(207, 19, 207);
 }
-
-main {
-
+.imagem-e-h2{
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-color: rgba(18, 18, 153, 0.238);
+    padding: 20px 0px;
+    text-align: center;
+    font-size:1em;
+}
+.imagem-e-h2 h2{
+    margin: 10px 0px;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .cards-produtos {
-    margin: 100px;
     position: relative;
     padding: 50px;
     overflow-x: auto;
@@ -80,6 +92,7 @@ main {
     grid-auto-flow: column;
     gap: 1.2rem;
     box-shadow: 1px 0px 5px #000000b3;
+  
 }
 
 .cards-produtos h3,
@@ -87,7 +100,6 @@ h4 {
     position: absolute;
     left: 0%;
     padding: 10px;
-    margin-left: 30px;
 }
 
 .cards-produtos h3 {
@@ -120,6 +132,13 @@ h4 {
 
 .card:hover {
     transform: scale(1.1);
+}
+#outros-produtos{
+    color: white;
+    text-decoration: none;  
+    cursor: pointer;
+    margin-top: 10px;
+
 }
 
 footer,
