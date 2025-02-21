@@ -145,12 +145,25 @@ h4 {
 }
 .textinho-deproduto{
     padding: 10px;
-    margin-bottom: 50px;
     background-color: rgba(255, 255, 255, 0.127);
     text-align: center;
     color: rgb(224, 105, 224);
     border-radius: 10px;
     animation: mudarCorFonte 5s  infinite;
+}
+.icones{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+.img-controle{
+    margin: 0px 10px;
+    transition: .2s ease-in-out;
+}
+.img-controle:hover{
+    transform: scale(1.1);
 }
 footer,
 .footer-div,
