@@ -171,6 +171,17 @@ footer {
     padding: 30px 0px;
     background-color: #1C102F;
 }
+@keyframes mudarCorFonte {
+    0%{
+        color:rgb(213, 54, 213) ;
+    }
+    50%{
+        color:rgb(255, 234, 234) ;
+    }
+    100%{
+        color:rgb(213, 54, 213);
+    }
+}
 @media (max-width: 515px) {
     .cards-produtos{
         width: 100%;
@@ -181,16 +192,5 @@ footer {
     }
     footer {
         height:200px;
-    }
-}
-@keyframes mudarCorFonte {
-    0%{
-        color:rgb(213, 54, 213) ;
-    }
-    50%{
-        color:rgb(255, 234, 234) ;
-    }
-    100%{
-        color:rgb(213, 54, 213);
     }
 }
