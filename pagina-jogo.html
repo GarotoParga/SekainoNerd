@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cicatrizes do Silêncio - Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .download-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .download-btn:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        .progress-bar {
+            width: 100%;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+            display: none;
+        }
+        .progress {
+            width: 0%;
+            height: 10px;
+            background: #007bff;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cicatrizes do Silêncio</h1>
+        <p>Jogo em fase de testes e desenvolvimento. Acompanhe as atualizações e faça o download abaixo!</p>
+        <p><strong>Última versão disponível:</strong> 0.1 Beta</p>
+        <button id="downloadBtn" class="download-btn" onclick="startDownload()">Baixar APK</button>
+        <div class="progress-bar" id="progressBar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <p id="downloadStatus" style="display: none;">Baixando... <span id="progressPercent">0%</span></p>
+    </div>
+
+    <script>
+        function startDownload() {
+            let btn = document.getElementById('downloadBtn');
+            let progressBar = document.getElementById('progressBar');
+            let progress = document.getElementById('progress');
+            let progressText = document.getElementById('downloadStatus');
+            let progressPercent = document.getElementById('progressPercent');
+
+            btn.disabled = true;
+            progressBar.style.display = 'block';
+            progressText.style.display = 'block';
+            
+            let percent = 0;
+            let interval = setInterval(() => {
+                percent += 10;
+                progress.style.width = percent + '%';
+                progressPercent.textContent = percent + '%';
+
+                if (percent >= 100) {
+                    clearInterval(interval);
+                    btn.innerText = 'Download Concluído';
+                    
+                    // Criar um link para baixar o jogo
+                    let downloadLink = document.createElement('a');
+                    downloadLink.href = "URL_DO_APK"; // 🔹 SUBSTITUA PELO LINK REAL DO SEU APK
+                    downloadLink.download = "Cicatrizes_do_Silencio.apk"; // 🔹 Nome do arquivo ao baixar
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>
