@@ -1,65 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/arcade.png" type="image/x-icon">
     <title>Cicatrizes do Silêncio - Download</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: "bebas neue";
+            letter-spacing: 1px;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: white;
+            height: 100vh;
+            background: radial-gradient(circle, #350714, #1e1e1e);
+            color: #fff;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
         }
-        .container {
-            max-width: 500px;
-            margin: auto;
-            background: #1e1e1e;
-            padding: 20px;
+
+        #inicio {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(45deg, #d000ff, #ff007f);
+            padding: 8px 15px;
+            font-size: 1em;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-        .download-btn {
-            background-color: #007bff;
             color: white;
-            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 0px 12px rgba(255, 0, 255, 0.8);
+        }
+
+        #inicio:hover {
+            background: linear-gradient(45deg, #ff007f, #d000ff);
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 1);
+        }
+
+        .container {
+            max-width: 700px;
+            background: rgba(30, 30, 30, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(227, 17, 80, 0.5);
+            animation: fadeIn 1.2s ease-in-out;
+            border: 2px solid #d000ff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.8em;
+            color: #d000ff;
+            text-shadow: 0px 0px 15px rgba(208, 0, 255, 0.8);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, #d000ff, #ff007f);
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
         }
-        .download-btn:disabled {
-            background-color: gray;
-            cursor: not-allowed;
+
+        .download-btn:hover {
+            background: linear-gradient(45deg, #ff007f, #d000ff);
+            box-shadow: 0px 0px 20px rgba(255, 0, 255, 1);
         }
+
         .progress-bar {
             width: 100%;
             background: #333;
             border-radius: 5px;
             overflow: hidden;
-            margin-top: 10px;
+            margin-top: 15px;
             display: none;
         }
+
         .progress {
             width: 0%;
             height: 10px;
-            background: #007bff;
+            background: #d000ff;
             transition: width 0.3s;
+        }
+
+        #downloadStatus {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+        }
+
+        @media (max-width: 450px) {
+            .container {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
+
 <body>
+    <a href="index.html">
+        <h6 id="inicio">INÍCIO</h6>
+    </a>
     <div class="container">
         <h1>Cicatrizes do Silêncio</h1>
-        <p>Jogo em fase de testes e desenvolvimento. Acompanhe as atualizações e faça o download abaixo!</p>
-        <p><strong>Última versão disponível:</strong> 0.1 Beta</p>
+        <p>Baixe a versão mais recente do jogo e embarque nessa jornada!</p>
+        <p><strong>Versão Atual:</strong> 0.1 Beta</p>
         <button id="downloadBtn" class="download-btn" onclick="startDownload()">Baixar APK</button>
         <div class="progress-bar" id="progressBar">
             <div class="progress" id="progress"></div>
         </div>
-        <p id="downloadStatus" style="display: none;">Baixando... <span id="progressPercent">0%</span></p>
+        <p id="downloadStatus">Baixando... <span id="progressPercent">0%</span></p>
     </div>
 
     <script>
@@ -70,10 +165,10 @@
             let progressText = document.getElementById('downloadStatus');
             let progressPercent = document.getElementById('progressPercent');
 
-            btn.disabled = true;
-            progressBar.style.display = 'block';
-            progressText.style.display = 'block';
-            
+            btn.disabled = true; // Desabilita o botão durante o download
+            progressBar.style.display = 'block'; // Exibe a barra de progresso
+            progressText.style.display = 'block'; // Exibe o texto de progresso
+
             let percent = 0;
             let interval = setInterval(() => {
                 percent += 10;
@@ -81,19 +176,31 @@
                 progressPercent.textContent = percent + '%';
 
                 if (percent >= 100) {
-                    clearInterval(interval);
-                    btn.innerText = 'Download Concluído';
-                    
-                    // Criar um link para baixar o jogo
+                    clearInterval(interval); // Para a animação quando atingir 100%
+                    btn.innerText = 'Download Concluído'; // Muda o texto do botão
+
+                    // Cria o link para o download
                     let downloadLink = document.createElement('a');
-                    downloadLink.href = "URL_DO_APK"; // 🔹 SUBSTITUA PELO LINK REAL DO SEU APK
-                    downloadLink.download = "Cicatrizes_do_Silencio.apk"; // 🔹 Nome do arquivo ao baixar
+                    downloadLink.href = "assets/apk/13susurros-4.apk"; // Caminho do arquivo APK
+                    downloadLink.download = "Cicatrizes_do_Silencio.apk";
                     document.body.appendChild(downloadLink);
-                    downloadLink.click();
-                    document.body.removeChild(downloadLink);
+                    downloadLink.click(); // Clica automaticamente no link para iniciar o download
+                    document.body.removeChild(downloadLink); // Remove o link após o clique
+
+                    // Reabilita o botão e redefine o texto após o download
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.innerText = 'Baixar APK'; // Restaura o texto original do botão
+                        progressBar.style.display = 'none'; // Esconde a barra de progresso
+                        progress.style.width = '0%'; // Restaura a barra para 0%
+                        progressPercent.textContent = '0%'; // Restaura a porcentagem para 0%
+                        progressText.style.display = 'none'; // Esconde o texto de progresso
+                    }, 1000); // Ajusta o tempo de reabilitação do botão (1 segundo após o download ser concluído)
                 }
             }, 500);
         }
     </script>
+
 </body>
+
 </html>

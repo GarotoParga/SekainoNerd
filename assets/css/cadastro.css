@@ -11,7 +11,7 @@
 }
 
 body{
-    background-color: rgb(56, 2, 103);
+    background: radial-gradient(circle, #350714, #1e1e1e);
     color: white;
 }
 #inicio {

@@ -12,8 +12,31 @@
 
 body {
     height: 100vh;
-    background-color: #3D0A2D;
+    background: radial-gradient(circle, #350714, #1e1e1e);
     color: white;
+    overflow-x: hidden;
+}
+
+#jogo {
+    z-index: 1;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin: 0px 50px 50px 0px;
+    background: linear-gradient(45deg, #d000ff, #ff007f);
+    padding: 8px 15px;
+    font-size: 1em;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0px 0px 12px rgba(255, 0, 255, 0.8);
+}
+
+#jogo:hover {
+    background: linear-gradient(45deg, #ff007f, #d000ff);
+    box-shadow: 0px 0px 15px rgba(255, 0, 255, 1);
 }
 
 body::-webkit-scrollbar {
@@ -62,7 +85,8 @@ nav a {
 nav a:hover {
     background-color: #4a0836;
 }
-.imagem-e-h1{
+
+.imagem-e-h1 {
     overflow-x: hidden;
     display: flex;
     width: 100%;
@@ -71,18 +95,21 @@ nav a:hover {
     flex-direction: column;
     padding: 20px 0px;
     text-align: center;
-    font-size:1em;
+    font-size: 1em;
 }
-.imagem-e-h1 h1{
+
+.imagem-e-h1 h1 {
     margin: 10px 10px;
     padding: 10px 20px;
 }
-#paragrafo-descrição{
+
+#paragrafo-descrição {
     padding: 10px;
     line-height: 30px;
     font-size: .9em;
     background: #291022;
 }
+
 main {
     padding: 50px 0px;
     display: flex;
@@ -104,7 +131,7 @@ main {
     grid-auto-flow: column;
     gap: 1.2rem;
     box-shadow: 1px 0px 5px #000000b3;
-  
+
 }
 
 .cards-produtos h3,
@@ -145,28 +172,33 @@ h4 {
 .card:hover {
     transform: scale(1.1);
 }
-.textinho-deproduto{
+
+.textinho-deproduto {
     padding: 10px;
     background-color: #291022;
     text-align: center;
     color: rgb(224, 105, 224);
     border-radius: 10px;
-    animation: mudarCorFonte 5s  infinite;
+    animation: mudarCorFonte 5s infinite;
 }
-.icones{
+
+.icones {
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0px;
 }
-.img-controle{
+
+.img-controle {
     margin: 0px 10px;
     transition: .2s ease-in-out;
 }
-.img-controle:hover{
+
+.img-controle:hover {
     transform: scale(1.1);
 }
+
 footer,
 .footer-div,
 .email-div,
@@ -190,35 +222,51 @@ footer {
     padding: 30px 0px;
     background-color: #4C0423;
 }
+
 @keyframes mudarCorFonte {
-    0%{
-        color:rgb(213, 54, 213) ;
+    0% {
+        color: rgb(213, 54, 213);
     }
-    50%{
-        color:rgb(255, 234, 234) ;
+
+    50% {
+        color: rgb(255, 234, 234);
     }
-    100%{
-        color:rgb(213, 54, 213);
+
+    100% {
+        color: rgb(213, 54, 213);
     }
 }
-@media (max-width: 515px) {
-    .cards-produtos{
+@media (max-width: 500px){
+    #jogo{
+        font-size: 0.7em;
+        margin: 0px 20px 20px 0px;
+    }
+}
+@media (max-width: 1280px) {
+    .cards-produtos {
         width: 100%;
     }
-    .cards-produtos h4,.cards-produtos h3 {
+
+    .cards-produtos h4,
+    .cards-produtos h3 {
         font-size: .9em;
- 
+
     }
+
     footer {
-        height:200px;
+        height: 200px;
     }
 }
-@media (min-width:500px){
-    #paragrafo-descrição, .textinho-deproduto{
+
+@media (min-width:500px) {
+
+    #paragrafo-descrição,
+    .textinho-deproduto {
         width: 600px;
         margin: auto;
     }
-    #minha-imagem{
+
+    #minha-imagem {
         height: 400px;
     }
 }
