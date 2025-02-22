@@ -24,7 +24,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #710655;
+  background: #59173E;
   flex-direction: column;
   margin: 20px 0px;
   border:1px solid #1A1A1A;
@@ -45,7 +45,7 @@ span{
   color: #29FF3B;
 }
 button{
-  background: #911212;
+  background: #490830;
   border: 1px solid #DBDBDB42;
   outline: none;
   padding: 10px;

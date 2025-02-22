@@ -12,7 +12,7 @@
 
 body {
     height: 100vh;
-    background-color: #1f1846;
+    background-color: #3D0A2D;
     color: white;
 }
 
@@ -34,7 +34,7 @@ header {
     width: 100%;
     color: white;
     height: 100px;
-    background-color: #1C102F;
+    background-color: #3C061D;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@ header {
 }
 
 nav {
-    background: #39467e5c;
+    background: #5C0F48;
     padding: 5px;
     border-radius: 5px;
 }
@@ -58,7 +58,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #110D28;
+    background-color: #54053C;
     color: rgb(207, 19, 207);
 }
 .imagem-e-h1{
@@ -67,7 +67,6 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(18, 18, 153, 0.238);
     padding: 20px 0px;
     text-align: center;
     font-size:1em;
@@ -80,6 +79,7 @@ nav a:hover {
     padding: 10px;
     line-height: 30px;
     font-size: .9em;
+    background: #291022;
 }
 main {
     padding: 50px 0px;
@@ -96,7 +96,7 @@ main {
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    background: #170449;
+    background: #671B49A6;
     border-radius: 5px;
     display: grid;
     grid-auto-flow: column;
@@ -121,7 +121,7 @@ h4 {
 }
 
 .card {
-    background-color: rgba(62, 62, 163, 0.274);
+    background-color: #59173E;
     padding: 25px 20px;
     display: flex;
     text-align: center;
@@ -145,7 +145,7 @@ h4 {
 }
 .textinho-deproduto{
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.127);
+    background-color: #291022;
     text-align: center;
     color: rgb(224, 105, 224);
     border-radius: 10px;
@@ -186,7 +186,7 @@ footer img {
 footer {
     width: 100%;
     padding: 30px 0px;
-    background-color: #1C102F;
+    background-color: #4C0423;
 }
 @keyframes mudarCorFonte {
     0%{
