@@ -10,14 +10,32 @@
     color: white;
 }
 body{
-  background-color: #340B2A;
+  background-color: #25081E;
+}
+h6{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    margin: 50px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 15px;
+    align-items: center;
+    color: rgb(114, 5, 107);
+    text-decoration: none;
+}
+h6:hover{
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.522);
 }
 .produtos{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0px 1px 3px #0F0F0F7A;
+  margin: 50px 0px;
 }
 .item{
   width: 65%;
