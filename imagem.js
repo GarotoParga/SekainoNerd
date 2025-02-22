@@ -8,19 +8,27 @@ const imagens = [
 const minhaImagem = document.getElementById('minha-imagem');
 let indiceImagem = 0;
 
+// Garante que a primeira imagem carregue instantaneamente
+window.onload = () => {
+    minhaImagem.src = imagens[indiceImagem];
+    minhaImagem.style.opacity = 1; // Garante que a imagem apareça já carregada
+};
+
 function mudarImagem() {
     const proximaImagem = new Image(); // Pré-carrega a próxima imagem
     indiceImagem = (indiceImagem + 1) % imagens.length;
     proximaImagem.src = imagens[indiceImagem];
 
     proximaImagem.onload = () => {
-        minhaImagem.style.opacity = 0; // Suaviza a saída
+        minhaImagem.style.transition = 'opacity 0.8s ease-in-out';
+        minhaImagem.style.opacity = 0; // Faz a imagem desaparecer suavemente
+
         setTimeout(() => {
             minhaImagem.src = proximaImagem.src;
-            minhaImagem.style.opacity = 1; // Suaviza a entrada
-        }, 500); // Pequeno delay para evitar flickering
+            minhaImagem.style.opacity = 1; // Faz a nova imagem aparecer suavemente
+        }, 400); // Delay reduzido para transição mais fluida
     };
 }
 
-// Inicia a troca de imagens
+// Inicia a troca de imagens automaticamente
 setInterval(mudarImagem, 5000);
