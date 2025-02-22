@@ -62,11 +62,6 @@ nav a {
 nav a:hover {
     background-color: #4a0836;
 }
-
-#minha-imagem {
-    transition: opacity 1s ease-in-out; 
-    opacity: 1;
-}
 .imagem-e-h1{
     overflow-x: hidden;
     display: flex;
