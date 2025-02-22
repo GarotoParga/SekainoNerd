@@ -9,21 +9,18 @@ const minhaImagem = document.getElementById('minha-imagem');
 let indiceImagem = 0;
 
 function mudarImagem() {
-    // Suaviza a saída
-    minhaImagem.style.transition = 'opacity 1s ease-in-out';
-    minhaImagem.style.opacity = 0;
+    const proximaImagem = new Image(); // Pré-carrega a próxima imagem
+    indiceImagem = (indiceImagem + 1) % imagens.length;
+    proximaImagem.src = imagens[indiceImagem];
 
-    setTimeout(() => {
-        indiceImagem = (indiceImagem + 1) % imagens.length;
-        minhaImagem.src = imagens[indiceImagem];
-
-        // Garante que a imagem carregou antes de exibir
-        minhaImagem.onload = () => {
-            minhaImagem.style.opacity = 1;
-        };
-    }, 1000);
+    proximaImagem.onload = () => {
+        minhaImagem.style.opacity = 0; // Suaviza a saída
+        setTimeout(() => {
+            minhaImagem.src = proximaImagem.src;
+            minhaImagem.style.opacity = 1; // Suaviza a entrada
+        }, 500); // Pequeno delay para evitar flickering
+    };
 }
 
 // Inicia a troca de imagens
 setInterval(mudarImagem, 5000);
-
