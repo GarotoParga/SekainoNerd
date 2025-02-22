@@ -44,7 +44,7 @@ header {
 
 nav {
     background: #5C0F48;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
 }
 
@@ -52,18 +52,24 @@ nav a {
     color: white;
     text-decoration: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     transition: .5s;
+    font-size: 1.2ems;
 }
 
 nav a:hover {
-    background-color: #54053C;
-    color: rgb(207, 19, 207);
+    background-color: #4a0836;
+}
+
+#minha-imagem {
+    transition: opacity 1s ease-in-out; 
+    opacity: 1;
 }
 .imagem-e-h1{
     overflow-x: hidden;
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -209,5 +215,14 @@ footer {
     }
     footer {
         height:200px;
+    }
+}
+@media (min-width:500px){
+    #paragrafo-descrição, .textinho-deproduto{
+        width: 600px;
+        margin: auto;
+    }
+    #minha-imagem{
+        height: 400px;
     }
 }

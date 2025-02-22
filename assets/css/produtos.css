@@ -2,70 +2,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: "bebas neue";
-    letter-spacing: 1px;
-    color: white;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "bebas neue";
+  letter-spacing: 1px;
+  color: white;
 }
-body{
+
+body {
   background-color: #25081E;
 }
-#inicio{
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    margin: 50px;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 10px;
-    font-size: 1.1em;
-    border-radius: 15px;
-    align-items: center;
-    color: rgb(114, 5, 107);
-    text-decoration: none;
+
+#inicio {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(45deg, #d000ff, #ff007f);
+  padding: 8px 15px;
+  font-size: 1em;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0px 0px 12px rgba(255, 0, 255, 0.8);
 }
-#inicio:hover{
-  color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0.522);
+
+#inicio:hover {
+  background: linear-gradient(45deg, #ff007f, #d000ff);
+  box-shadow: 0px 0px 15px rgba(255, 0, 255, 1);
 }
-.produtos{
+
+.produtos {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 10px;
   margin: 50px 0px;
 }
-.item{
+
+.item {
   width: 65%;
   display: flex;
+  max-width: 250px;
   justify-content: center;
   align-items: center;
   background: #59173E;
   flex-direction: column;
   margin: 20px 0px;
-  border:1px solid #1A1A1A;
+  border: 1px solid #1A1A1A;
   padding: 10px;
   border-radius: 10px;
 }
-.produto-img{
+
+.produto-img {
   display: flex;
   justify-content: center;
   height: 250px;
   width: 100%;
   overflow: hidden;
 }
-p, span{
+
+p,
+span {
   margin: 5px 0px;
 }
-span{
+
+span {
   color: #29FF3B;
 }
-button{
+
+button {
   background: #490830;
   border: 1px solid #DBDBDB42;
   outline: none;
   padding: 10px;
   border-radius: 10px;
+}
+
+@media (min-width: 550px) {
+  .produtos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1550px) {
+  .produtos {
+    margin: 50px auto 0px auto;
+    width: 1200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .item {
+    width: 20%;
+  }
 }

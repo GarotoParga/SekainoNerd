@@ -13,18 +13,18 @@
 
 <body class="d-flex align-items-center py-4 h-100">
         <a href="index.html" class="voltar">
-            <h6>INÍCIO</h6>
+            <h6 id="inicio">INÍCIO</h6>
         </a>
     <main class="m-auto form-container">
         <form action="#">
             <img src="assets/imgs/arcade.png" alt="Logo" class="mb-4" height="100">
             <h1 class="h3 mb-3 fw-normal">Faça seu Cadastro</h1>
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingEmail" required placeholder="Seu-Email@gmail.com" maxlength="40" minlength="8">
+                <input type="email" class="form-control" id="floatingEmail" placeholder="Seu-Email@gmail.com" maxlength="40" minlength="8">
                 <label for="floatingEmail" style="color:rgb(209, 30, 209)">Email</label>
             </div>
             <div class="form-floating">
-                <input type="password" name="senha" class="form-control senha" id="floatingSenha" required placeholder="Sua senha" maxlength="30" minlength="8" style="position:relative">
+                <input type="password" name="senha" class="form-control senha" id="floatingSenha" placeholder="Sua senha" maxlength="30" minlength="8" style="position:relative">
                 <label for="floatingSenha" style="color:rgb(209, 30, 209)">Senha</label>
                 <img src="assets/imgs/eye.png" alt="Mostrar senha" id="icon-olho" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="senhaMostrar()">
             </div>
@@ -33,7 +33,7 @@
                 <label for="flexCheckDefult" class="form-check-label" style="color:rgb(209, 30, 209)">Lembre-me</label>
                 <a href="login.html">Já tenho uma conta.</a>
             </div>
-            <button class="btn btn-primary w-100 py-2" id="button">Cadastrar</button>
+            <button class="btn btn-primary w-100 py-2" id="button" onclick="alertBD()">Cadastrar</button>
         </form>
     </main>
     <script src="script.js"></script>

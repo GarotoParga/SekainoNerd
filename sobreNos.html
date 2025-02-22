@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/arcade.png" type="image/x-icon">
+    <title>Nerd no Sekai</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(circle, #350714, #1e1e1e);
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #inicio {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(45deg, #d000ff, #ff007f);
+            padding: 8px 15px;
+            font-size: 1em;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 0px 12px rgba(255, 0, 255, 0.8);
+        }
+
+        #inicio:hover {
+            background: linear-gradient(45deg, #ff007f, #d000ff);
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 1);
+        }
+
+        .container {
+            max-width: 700px;
+            background: rgba(30, 30, 30, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(227, 17, 80, 0.5);
+            animation: fadeIn 1.2s ease-in-out;
+            border: 2px solid #d000ff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.8em;
+            color: #d000ff;
+            text-shadow: 0px 0px 15px rgba(208, 0, 255, 0.8);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            min-height: 150px;
+            font-weight: 300;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 12px;
+            height: 24px;
+            background-color: #d000ff;
+            animation: blink 0.7s infinite;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0.3;
+            }
+        }
+        @media (max-width:450px){
+            .container{
+                width: 100%;
+                h1{
+                    font-size: 1.5em;
+                    margin-bottom: 10px;
+                }
+                p{
+                    font-size: 1em;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" id="inicio">INÍCIO</a>
+    <div class="container">
+        <h1>Bem-vindo à Nerd no Sekai!</h1>
+        <p id="text"></p><span class="cursor"></span>
+    </div>
+
+    <script>
+        const texto = "Somos apaixonados por tecnologia e cultura nerd! Aqui, oferecemos serviços de manutenção e montagem de PCs. Além disso, vendemos produtos tecnológicos, hardware, acessórios gamer, camisetas de animes, mangás e muito mais! Na Nerd no Sekai, o mundo nerd ganha vida!";
+        let index = 0;
+        const velocidade = 50;
+
+        function escreverTexto() {
+            if (index < texto.length) {
+                document.getElementById("text").innerHTML += texto.charAt(index);
+                index++;
+                setTimeout(escreverTexto, velocidade);
+            }
+        }
+        
+        window.onload = escreverTexto;
+    </script>
+</body>
+
+</html>
